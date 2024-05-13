@@ -19,7 +19,8 @@ public class Test {
         });
     }
 
-    public static void main02(String[] args) {
+    @org.junit.Test
+    public void main02() {
         SinglyLinkedList list = new SinglyLinkedList();
         list.addFirst(1);
         list.addFirst(2);
@@ -31,7 +32,8 @@ public class Test {
         }
     }
 
-    public static void main03(String[] args) {
+    @org.junit.Test
+    public void main03() {
         SinglyLinkedList list = new SinglyLinkedList();
         list.addLast(1);
         list.addLast(2);
@@ -47,7 +49,8 @@ public class Test {
         });
     }
 
-    public static void main04(String[] args) {
+    @org.junit.Test
+    public void main04() {
         SinglyLinkedList list = new SinglyLinkedList();
         list.addLast(1);
         list.addLast(2);
@@ -57,7 +60,8 @@ public class Test {
         System.out.println(list.get(10));
     }
 
-    public static void main05(String[] args) {
+    @org.junit.Test
+    public void main05() {
         SinglyLinkedList list = new SinglyLinkedList();
         list.addLast(1);
         list.addLast(2);
@@ -71,7 +75,8 @@ public class Test {
         }
     }
 
-    public static void main06(String[] args) {
+    @org.junit.Test
+    public void main06() {
         SinglyLinkedListSentinel list = new SinglyLinkedListSentinel();
         list.addLast(1);
         list.addLast(2);
@@ -97,7 +102,8 @@ public class Test {
         System.out.println(list.get(8));
     }
 
-    public static void main07(String[] args) {
+    @org.junit.Test
+    public void main07() {
         SinglyLinkedListSentinel list = new SinglyLinkedListSentinel();
         list.addLast(1);
         list.addLast(2);
@@ -117,7 +123,8 @@ public class Test {
         list.remove(5);
     }
 
-    public static void main08(String[] args) {
+    @org.junit.Test
+    public void main08() {
         DoublyLinkedListSentinel list = new DoublyLinkedListSentinel();
         list.addFirst(1);
         list.addLast(6);
@@ -134,7 +141,8 @@ public class Test {
         }
     }
 
-    public static void main09(String[] args) {
+    @org.junit.Test
+    public void main09() {
         DoublyCircleLinkedListSentinel list = new DoublyCircleLinkedListSentinel();
         /*list.addFirst(1);
         list.addFirst(2);
@@ -164,7 +172,8 @@ public class Test {
         }
     }
 
-    public static void main10(String[] args) {
+    @org.junit.Test
+    public void main10() {
         DoublyCircleLinkedListSentinel list = new DoublyCircleLinkedListSentinel();
         list.addLast(1);
         list.addLast(2);
@@ -181,7 +190,8 @@ public class Test {
         }
     }
 
-    public static void main(String[] args) {
+    @org.junit.Test
+    public void main11() {
         SinglyLinkedList list = new SinglyLinkedList();
         list.addLast(1);
         list.addLast(2);
@@ -189,6 +199,16 @@ public class Test {
         list.addLast(4);
         list.addLast(5);
         list.addLast(6);
-        //list.loop3();
+        list.loop3(new Consumer<Integer>() {
+            @Override
+            public void accept(Integer integer) {
+                System.out.println(integer);
+            }
+        }, new Consumer<Integer>() {
+            @Override
+            public void accept(Integer integer) {
+                System.out.println(integer);
+            }
+        });
     }
 }
