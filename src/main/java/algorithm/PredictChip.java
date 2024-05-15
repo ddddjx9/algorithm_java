@@ -2,7 +2,7 @@ package algorithm;
 
 import java.util.*;
 
-public class predictChip {
+public class PredictChip {
     public static void main(String[] args) {
         //初步思路：
         //如果有几组数据一样，应该说明这些都是好芯片，然后初步筛选

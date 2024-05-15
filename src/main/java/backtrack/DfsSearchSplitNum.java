@@ -2,7 +2,7 @@ package backtrack;
 
 import java.util.Scanner;
 
-public class dfsSearchSplitNum {
+public class DfsSearchSplitNum {
     static int[] arr;
     static int n;
     static int num;

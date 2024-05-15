@@ -9,52 +9,20 @@ public class Test {
         ListNode n12 = new ListNode(2, n13);
         ListNode n11 = new ListNode(1, n12);
 
-        ListNode n25 = new ListNode(8, null);
-        ListNode n24 = new ListNode(7, n25);
-        ListNode n23 = new ListNode(4, n24);
-        ListNode n22 = new ListNode(2, n23);
-
-        System.out.println(n11);
-        System.out.println(new Test().mergeTwoLists2(n11, n22));
+        System.out.println(new Test().middleNode(n11));
     }
 
-    public ListNode mergeTwoLists(ListNode p1, ListNode p2) {
-        //非递归实现
-        ListNode s = new ListNode(-1, null);
-        ListNode p = s;
-        while (p1 != null && p2 != null) {
-            if (p1.val < p2.val) {
-                p.next = p1;
-                p1 = p1.next;
-            } else {
-                p.next = p2;
-                p2 = p2.next;
-            }
-            p = p.next;
+    public ListNode middleNode(ListNode head) {
+        /*
+        快慢指针法：其中慢指针一次走一步，快指针一次走两步
+         */
+        ListNode p1 = head;
+        ListNode p2 = head;
+        while (p2 != null && p2.next != null) {
+            p1 = p1.next;
+            p2 = p2.next.next;
         }
-        if (p1 != null) {
-            p.next = p1;
-        }
-        if (p2 != null) {
-            p.next = p2;
-        }
-        return s.next;
-    }
-
-    public ListNode mergeTwoLists2(ListNode p1, ListNode p2) {
-        if (p1 == null) {
-            return p2;
-        }
-        if (p2 == null) {
-            return p1;
-        }
-        if (p1.val < p2.val) {
-            p1.next = mergeTwoLists2(p1.next, p2);
-            return p1;
-        } else {
-            p2.next = mergeTwoLists2(p1, p2.next);
-            return p2;
-        }
+        return p1;
     }
 }
 

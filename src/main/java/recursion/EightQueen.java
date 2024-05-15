@@ -2,7 +2,7 @@ package recursion;
 
 import java.util.Scanner;
 
-public class eightQueen {
+public class EightQueen {
     static int count = 0;
 
     public static void main(String[] args) {
@@ -13,7 +13,7 @@ public class eightQueen {
         //arr[0]=0表示第一个皇后放在第一行的第一列
         int[] arr = new int[max];
         //测试：
-        eightQueen queen = new eightQueen();
+        EightQueen queen = new EightQueen();
         queen.check(0, arr, max);
         System.out.println(count);
     }

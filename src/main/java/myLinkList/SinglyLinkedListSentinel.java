@@ -1,4 +1,4 @@
-package myLinkListed;
+package myLinkList;
 
 import java.util.Iterator;
 import java.util.function.Consumer;

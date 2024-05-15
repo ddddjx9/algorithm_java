@@ -3,7 +3,7 @@ package recursion;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class findShortWay {
+public class FindShortWay {
     public static void main(String[] args) {
         //先创建一个二维数组，模拟迷宫
         //地图
