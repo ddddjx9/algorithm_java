@@ -1,4 +1,4 @@
-package statusSearch;
+package recursion;
 
 import java.util.Scanner;
 

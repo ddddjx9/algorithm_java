@@ -1,4 +1,4 @@
-package myLinkList;
+package myLinkedList;
 
 public class ListNode {
     public int val;
@@ -41,9 +41,14 @@ public class ListNode {
         StringBuilder sb = new StringBuilder();
         sb.append("[");
         ListNode p = this;
-        while (p != null) {
+        //这里是因为检测出环后改进的toString()方法：
+        sb.append(p.val);
+        sb.append(",");
+        p = p.next;
+        //除此之外，想要恢复原样，就将下面的this改为null即可
+        while (p != this) {
             sb.append(p.val);
-            if (p.next != null) {
+            if (p.next != this) {
                 sb.append(",");
             }
             p = p.next;

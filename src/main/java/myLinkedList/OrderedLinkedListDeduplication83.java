@@ -1,4 +1,4 @@
-package myLinkList;
+package myLinkedList;
 
 public class OrderedLinkedListDeduplication83 {
     public static void main(String[] args) {

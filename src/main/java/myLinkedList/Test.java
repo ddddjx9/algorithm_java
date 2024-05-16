@@ -1,4 +1,4 @@
-package myLinkList;
+package myLinkedList;
 
 import java.util.function.Consumer;
 

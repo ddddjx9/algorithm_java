@@ -1,4 +1,4 @@
-package myLinkList;
+package myLinkedList;
 
 public class RemoveLastElements {
     static int count = 0;

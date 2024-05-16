@@ -1,4 +1,4 @@
-package myLinkList;
+package myLinkedList;
 
 public class RemoveListElements {
     public static void main(String[] args) {
