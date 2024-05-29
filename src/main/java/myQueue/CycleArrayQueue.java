@@ -4,37 +4,25 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.Queue;
 
-//使用单向环形链表来模拟队列
-//考虑队列容量问题，一旦超出容量，那么就不能再加入元素，offer方法返回false
-public class LinkedListImitateQueue<E> implements Queue<E>, Iterable<E> {
-    private static class Node<E> {
-        //内部类，节点依赖于链表存在，所以写成内部类
-        E value;
-        Node<E> next;
 
-        public Node(E value, Node<E> next) {
-            this.value = value;
-            this.next = next;
-        }
-    }
+/**
+ * 环形数组实现队列
+ * 环形数组意味着不存在越界问题
+ * 数组性能更优
+ * 环形数组比较适合实现有界队列，RingBuffer等
+ * 所有其他元素不用动，让指针指向下一个元素即可
+ * 仅仅用head和tail判断空和满，head和tail即为索引值
+ *
+ * @param <E> 队列中元素的类型
+ */
+public class CycleArrayQueue<E> implements Queue<E>, Iterable<E> {
+    private E[] array;
+    private int head = 0;
+    private int tail = 0;
 
-    Node<E> head = new Node<>(null, null);
-    Node<E> tail = head;
-    private int capacity = Integer.MAX_VALUE;
-    private int size;
-
-    //构造方法中如果有重复代码，将之写在初始化语句块中
-    {
-        tail.next = head;
-    }
-
-    public LinkedListImitateQueue(int capacity) {
-        //如果被调用，由用户指定容量，如果没有被调用，默认无限加入
-        this.capacity = capacity;
-    }
-
-    public LinkedListImitateQueue() {
-        tail.next = head;
+    @SuppressWarnings("all")
+    public CycleArrayQueue(int capacity) {
+        array = (E[]) new Object[capacity + 1];
     }
 
     @Override
@@ -44,7 +32,11 @@ public class LinkedListImitateQueue<E> implements Queue<E>, Iterable<E> {
 
     @Override
     public boolean isEmpty() {
-        return tail == head;
+        return head == tail;
+    }
+
+    public boolean isFull() {
+        return (tail + 1) % array.length == head;
     }
 
     @Override
@@ -55,17 +47,17 @@ public class LinkedListImitateQueue<E> implements Queue<E>, Iterable<E> {
     @Override
     public Iterator<E> iterator() {
         return new Iterator<E>() {
-            Node<E> p = head.next;
+            int p = head;
 
             @Override
             public boolean hasNext() {
-                return p != head;
+                return p != tail;
             }
 
             @Override
             public E next() {
-                E value = p.value;
-                p = p.next;
+                E value = array[p];
+                p = (p + 1) % array.length;
                 return value;
             }
         };
@@ -121,10 +113,9 @@ public class LinkedListImitateQueue<E> implements Queue<E>, Iterable<E> {
         if (isFull()) {
             return false;
         }
-        Node<E> last = new Node<>(e, head);
-        tail.next = last;
-        tail = last;
-        size++;
+        array[tail] = e;
+        //重新计算尾指针的范围，不至于超过它的有效范围
+        tail = (tail + 1) % array.length;
         return true;
     }
 
@@ -136,18 +127,14 @@ public class LinkedListImitateQueue<E> implements Queue<E>, Iterable<E> {
     @Override
     public E poll() {
         //取出队列头部的元素，并移除
-        //环形链表，不用考虑为null的情况，每个节点肯定都有后继
         if (isEmpty()) {
             return null;
         }
-        //如果只剩一个元素。tail指针的值应该被更新
-        Node<E> first = head.next;
-        if (first == tail) {
-            tail = head;
-        }
-        head.next = first.next;
-        size--;
-        return first.value;
+
+        E value = array[head];
+        head = (head + 1) % array.length;
+        return value;
+
     }
 
     @Override
@@ -161,15 +148,6 @@ public class LinkedListImitateQueue<E> implements Queue<E>, Iterable<E> {
         if (isEmpty()) {
             return null;
         }
-        return head.next.value;
-    }
-
-    /**
-     * 检查队列是否已满
-     *
-     * @return 如果满，返回true，如果没满，返回false
-     */
-    public boolean isFull() {
-        return size == capacity;
+        return array[head];
     }
 }
