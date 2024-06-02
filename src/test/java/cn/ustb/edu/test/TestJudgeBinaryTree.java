@@ -1,9 +1,11 @@
-package Test;
+package cn.ustb.edu.test;
 
 import myBinaryTree.JudgeBinaryTree;
 import myBinaryTree.TreeNode;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class TestJudgeBinaryTree {
     /*
@@ -14,7 +16,7 @@ public class TestJudgeBinaryTree {
        3  4 3  4
      */
     @Test
-    public void Judge() {
+    public void judge() {
         TreeNode root1 = new TreeNode(
                 new TreeNode(
                         new TreeNode(3),
@@ -43,7 +45,7 @@ public class TestJudgeBinaryTree {
                 )
         );
 
-        Assert.assertTrue(new JudgeBinaryTree().judgeBinaryTree(root1));
-        Assert.assertFalse(new JudgeBinaryTree().judgeBinaryTree(root2));
+        assertTrue(new JudgeBinaryTree().judgeBinaryTree(root1));
+        assertFalse(new JudgeBinaryTree().judgeBinaryTree(root2));
     }
 }

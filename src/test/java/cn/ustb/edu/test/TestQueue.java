@@ -1,13 +1,16 @@
-package myQueue;
+package cn.ustb.edu.test;
 
 import myBinaryTree.TreeNode;
-import org.junit.Assert;
+import myQueue.*;
+import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-public class Test {
-    @org.junit.Test
-    public void Test() {
+import static org.junit.jupiter.api.Assertions.*;
+
+public class TestQueue {
+    @Test
+    public void Test1() {
         LinkedListImitateQueue<Integer> queue = new LinkedListImitateQueue(4);
         //queue.peek();
         queue.offer(1);
@@ -16,12 +19,10 @@ public class Test {
         queue.offer(4);
         queue.offer(5);
         queue.poll();
-        for (Integer i : queue) {
-            System.out.println(i);
-        }
+        assertIterableEquals(List.of(2, 3, 4, 5), queue);
     }
 
-    @org.junit.Test
+    @Test
     public void Test2() {
         CycleArrayQueue<Integer> queue = new CycleArrayQueue<>(4);
         //queue.peek();
@@ -31,12 +32,10 @@ public class Test {
         queue.offer(4);
         queue.offer(5);
         queue.poll();
-        for (Integer i : queue) {
-            System.out.println(i);
-        }
+
     }
 
-    @org.junit.Test
+    @Test
     public void Test3() {
         CycleArrayQueue2<Integer> queue = new CycleArrayQueue2<>(4);
         //queue.peek();
@@ -51,7 +50,7 @@ public class Test {
         }
     }
 
-    @org.junit.Test
+    @Test
     public void Test4() {
         CycleArrayQueue3<Integer> queue = new CycleArrayQueue3<>(4);
         //queue.peek();
@@ -66,7 +65,7 @@ public class Test {
         }
     }
 
-    @org.junit.Test
+    @Test
     public void Test5() {
         TreeNode root = new TreeNode(
                 new TreeNode(
@@ -86,19 +85,19 @@ public class Test {
         }
     }
 
-    @org.junit.Test
+    @Test
     public void TestCircularQueue() {
         MyCircularQueue queue = new MyCircularQueue(5);
-        Assert.assertTrue(queue.enQueue(1));
-        Assert.assertTrue(queue.enQueue(2));
-        Assert.assertTrue(queue.enQueue(3));
-        Assert.assertTrue(queue.enQueue(4));
-        Assert.assertTrue(queue.enQueue(5));
-        Assert.assertFalse(queue.enQueue(6));
+        assertTrue(queue.enQueue(1));
+        assertTrue(queue.enQueue(2));
+        assertTrue(queue.enQueue(3));
+        assertTrue(queue.enQueue(4));
+        assertTrue(queue.enQueue(5));
+        assertFalse(queue.enQueue(6));
 
-        Assert.assertTrue(queue.deQueue());
+        assertTrue(queue.deQueue());
 
-        Assert.assertEquals(2, queue.Front());
-        Assert.assertEquals(5, queue.Rear());
+        assertEquals(2, queue.Front());
+        assertEquals(5, queue.Rear());
     }
 }

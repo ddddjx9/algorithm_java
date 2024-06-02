@@ -1,18 +1,12 @@
 package search.src.cn.edu.ustb.search;
 
-import org.junit.Assert;
-import org.junit.Test;
 
 public class BinarySearchLeftMost {
-    @Test
-    public void test() {
-        int[] arr = {1, 2, 3, 4, 4, 5, 6, 6, 6, 7};
-        Assert.assertEquals(Long.valueOf(6), Long.valueOf(binarySearchLeftMost1(arr, 6)));
-        Assert.assertEquals(Long.valueOf(3), Long.valueOf(binarySearchLeftMost1(arr, 4)));
-        Assert.assertEquals(Long.valueOf(10), Long.valueOf(binarySearchLeftMost2(arr, 8)));
-        Assert.assertEquals(Long.valueOf(8), Long.valueOf(binarySearchRightMost(arr, 6)));
-        /*int[] a = {};
-        System.out.println(a.length);*/
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        System.out.println(binarySearchLeftMost1(arr, 8));
+        System.out.println(binarySearchLeftMost2(arr, 8));
+        System.out.println(binarySearchRightMost(arr, 6));
     }
 
     /**

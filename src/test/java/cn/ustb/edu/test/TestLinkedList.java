@@ -1,9 +1,15 @@
-package myLinkedList;
+package cn.ustb.edu.test;
+
+import myLinkedList.DoublyCircleLinkedListSentinel;
+import myLinkedList.DoublyLinkedListSentinel;
+import myLinkedList.SinglyLinkedList;
+import myLinkedList.SinglyLinkedListSentinel;
+import org.junit.jupiter.api.Test;
 
 import java.util.function.Consumer;
 
-public class Test {
-    @org.junit.Test
+public class TestLinkedList {
+    @Test
     public void main01() {
         SinglyLinkedList list = new SinglyLinkedList();
         //每次都将元素放在链表的头位置，所以我们遍历的时候就是反序的
@@ -19,7 +25,7 @@ public class Test {
         });
     }
 
-    @org.junit.Test
+    @Test
     public void main02() {
         SinglyLinkedList list = new SinglyLinkedList();
         list.addFirst(1);
@@ -32,7 +38,7 @@ public class Test {
         }
     }
 
-    @org.junit.Test
+    @Test
     public void main03() {
         SinglyLinkedList list = new SinglyLinkedList();
         list.addLast(1);
@@ -49,7 +55,7 @@ public class Test {
         });
     }
 
-    @org.junit.Test
+    @Test
     public void main04() {
         SinglyLinkedList list = new SinglyLinkedList();
         list.addLast(1);
@@ -60,7 +66,7 @@ public class Test {
         System.out.println(list.get(10));
     }
 
-    @org.junit.Test
+    @Test
     public void main05() {
         SinglyLinkedList list = new SinglyLinkedList();
         list.addLast(1);
@@ -75,7 +81,7 @@ public class Test {
         }
     }
 
-    @org.junit.Test
+    @Test
     public void main06() {
         SinglyLinkedListSentinel list = new SinglyLinkedListSentinel();
         list.addLast(1);
@@ -102,7 +108,7 @@ public class Test {
         System.out.println(list.get(8));
     }
 
-    @org.junit.Test
+    @Test
     public void main07() {
         SinglyLinkedListSentinel list = new SinglyLinkedListSentinel();
         list.addLast(1);
@@ -123,7 +129,7 @@ public class Test {
         list.remove(5);
     }
 
-    @org.junit.Test
+    @Test
     public void main08() {
         DoublyLinkedListSentinel list = new DoublyLinkedListSentinel();
         list.addFirst(1);
@@ -141,7 +147,7 @@ public class Test {
         }
     }
 
-    @org.junit.Test
+    @Test
     public void main09() {
         DoublyCircleLinkedListSentinel list = new DoublyCircleLinkedListSentinel();
         /*list.addFirst(1);
@@ -172,7 +178,7 @@ public class Test {
         }
     }
 
-    @org.junit.Test
+    @Test
     public void main10() {
         DoublyCircleLinkedListSentinel list = new DoublyCircleLinkedListSentinel();
         list.addLast(1);
@@ -190,7 +196,7 @@ public class Test {
         }
     }
 
-    @org.junit.Test
+    @Test
     public void main11() {
         SinglyLinkedList list = new SinglyLinkedList();
         list.addLast(1);

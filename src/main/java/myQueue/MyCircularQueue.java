@@ -6,7 +6,7 @@ package myQueue;
  * 也被称为环形缓冲器
  * 基于链表实现循环队列
  */
-class MyCircularQueue {
+public class MyCircularQueue {
     static class Node {
         int value;
         Node next;

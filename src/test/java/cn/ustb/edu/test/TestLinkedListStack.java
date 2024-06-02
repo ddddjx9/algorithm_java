@@ -1,12 +1,14 @@
-package Test;
+package cn.ustb.edu.test;
 
 import myStack.LinkedListStack;
+import org.junit.jupiter.api.Test;
 
-public class TestStack {
-    @org.junit.Test
-    public void TestStack() {
+
+public class TestLinkedListStack {
+    @Test
+    public void testStack() {
         //测试Stack的情况
-        LinkedListStack<Integer> stack = new LinkedListStack<Integer>(4);
+        LinkedListStack<Integer> stack = new LinkedListStack<>(4);
         stack.push(1);
         stack.push(2);
         stack.push(3);
