@@ -3,6 +3,11 @@ package cn.ustb.edu.test;
 import myStack.LinkedListStack;
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertIterableEquals;
+
 
 public class TestLinkedListStack {
     @Test
@@ -18,10 +23,8 @@ public class TestLinkedListStack {
         stack.pop();
 
         Integer peek = stack.peek();
-        System.out.println(peek);
+        assertEquals(3, peek);
 
-        for (Integer i : stack) {
-            System.out.println(i);
-        }
+        assertIterableEquals(List.of(3, 2, 1), stack);
     }
 }

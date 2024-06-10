@@ -14,7 +14,7 @@ public class ListNode {
 
     }
 
-    static class List {
+    public static class List {
         ListNode head;
 
         public List(ListNode head) {

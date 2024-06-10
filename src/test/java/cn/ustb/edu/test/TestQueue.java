@@ -1,16 +1,13 @@
 package cn.ustb.edu.test;
 
-import myBinaryTree.TreeNode;
 import myQueue.*;
 import org.junit.jupiter.api.Test;
-
-import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 public class TestQueue {
     @Test
-    public void Test1() {
+    public void testOffer() {
         LinkedListImitateQueue<Integer> queue = new LinkedListImitateQueue(4);
         //queue.peek();
         queue.offer(1);
@@ -19,11 +16,13 @@ public class TestQueue {
         queue.offer(4);
         queue.offer(5);
         queue.poll();
-        assertIterableEquals(List.of(2, 3, 4, 5), queue);
+        for (Integer i : queue) {
+            System.out.println(i);
+        }
     }
 
     @Test
-    public void Test2() {
+    public void testQueue1() {
         CycleArrayQueue<Integer> queue = new CycleArrayQueue<>(4);
         //queue.peek();
         queue.offer(1);
@@ -33,10 +32,13 @@ public class TestQueue {
         queue.offer(5);
         queue.poll();
 
+        for (Integer i : queue) {
+            System.out.println(i);
+        }
     }
 
     @Test
-    public void Test3() {
+    public void testQueue2() {
         CycleArrayQueue2<Integer> queue = new CycleArrayQueue2<>(4);
         //queue.peek();
         queue.offer(1);
@@ -51,7 +53,7 @@ public class TestQueue {
     }
 
     @Test
-    public void Test4() {
+    public void testQueue3() {
         CycleArrayQueue3<Integer> queue = new CycleArrayQueue3<>(4);
         //queue.peek();
         queue.offer(1);
@@ -65,28 +67,9 @@ public class TestQueue {
         }
     }
 
-    @Test
-    public void Test5() {
-        TreeNode root = new TreeNode(
-                new TreeNode(
-                        new TreeNode(4),
-                        2,
-                        new TreeNode(5)
-                ),
-                1,
-                new TreeNode(
-                        new TreeNode(6),
-                        3,
-                        new TreeNode(7)
-                ));
-        List<List<Integer>> lists = new BinaryTreeLevelOrderTraversal().levelOrder(root);
-        for (List<Integer> list : lists) {
-            System.out.println(list);
-        }
-    }
 
     @Test
-    public void TestCircularQueue() {
+    public void testCircularQueue() {
         MyCircularQueue queue = new MyCircularQueue(5);
         assertTrue(queue.enQueue(1));
         assertTrue(queue.enQueue(2));

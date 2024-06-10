@@ -2,20 +2,23 @@ package sort;
 
 public class A02_SelectionDemo {
     public static void main(String[] args) {
-
-        /*
-            选择排序：
-                1，从0索引开始，跟后面的元素一一比较。
-                2，小的放前面，大的放后面。
-                3，第一次循环结束后，最小的数据已经确定。
-                4，第二次循环从1索引开始以此类推。
-
-         */
-
-
         //1.定义数组
-        int[] arr = {2, 4, 5, 3, 1};
+        int[] arr1 = {2, 4, 5, 3, 1};
+        int[] arr2 = {8, 7, 4, 9, 6, 1, 3, 5, 1, 0};
+        selectionSort1(arr1);
+        selectionSort2(arr2);
+        printArr(arr1);
+        printArr(arr2);
+    }
 
+    private static void selectionSort1(int[] arr) {
+    /*
+        选择排序：
+            1，从0索引开始，跟后面的元素一一比较。
+            2，小的放前面，大的放后面。
+            3，第一次循环结束后，最小的数据已经确定。
+            4，第二次循环从1索引开始以此类推。
+     */
 
         //2.利用选择排序让数组变成 1 2 3 4 5
        /* //第一轮：
@@ -37,14 +40,35 @@ public class A02_SelectionDemo {
             //拿着i跟i后面的数据进行比较交换
             for (int j = i + 1; j < arr.length; j++) {
                 if (arr[i] > arr[j]) {
-                    int temp = arr[i];
-                    arr[i] = arr[j];
-                    arr[j] = temp;
+                    swap(arr, i, j);
                 }
             }
         }
+    }
 
-        printArr(arr);
+    public static void selectionSort2(int[] arr) {
+        /*选择的轮数：arr.length-1
+        交换的索引位置，初始值a.length-1，每次递减*/
+        for (int right = arr.length - 1; right > 0; right--) {
+            int max = right;
+            for (int i = 0; i < right; i++) {
+                if (arr[i] > arr[max]) {
+                    max = i;
+                }
+            }
+
+            //如果找到了比最后一个元素更大的值才交换，否则不交换
+            if (max != right) {
+                swap(arr, max, right);
+            }
+        }
+
+    }
+
+    private static void swap(int[] arr, int i, int j) {
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
     }
 
     private static void printArr(int[] arr) {
@@ -54,5 +78,4 @@ public class A02_SelectionDemo {
         }
         System.out.println();
     }
-
 }

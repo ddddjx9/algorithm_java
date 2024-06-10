@@ -6,27 +6,25 @@ import myLinkedList.SinglyLinkedList;
 import myLinkedList.SinglyLinkedListSentinel;
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
 import java.util.function.Consumer;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class TestLinkedList {
     @Test
-    public void main01() {
+    public void testAddFirst() {
         SinglyLinkedList list = new SinglyLinkedList();
         //每次都将元素放在链表的头位置，所以我们遍历的时候就是反序的
         list.addFirst(1);
         list.addFirst(2);
         list.addFirst(3);
         list.addFirst(4);
-        list.loop1(new Consumer<Integer>() {
-            @Override
-            public void accept(Integer integer) {
-                System.out.println(integer);
-            }
-        });
+        assertIterableEquals(List.of(4, 3, 2, 1), list);
     }
 
     @Test
-    public void main02() {
+    public void testEnhancedFor() {
         SinglyLinkedList list = new SinglyLinkedList();
         list.addFirst(1);
         list.addFirst(2);
@@ -39,7 +37,7 @@ public class TestLinkedList {
     }
 
     @Test
-    public void main03() {
+    public void testLoop() {
         SinglyLinkedList list = new SinglyLinkedList();
         list.addLast(1);
         list.addLast(2);
@@ -56,18 +54,18 @@ public class TestLinkedList {
     }
 
     @Test
-    public void main04() {
+    public void testAddLast() {
         SinglyLinkedList list = new SinglyLinkedList();
         list.addLast(1);
         list.addLast(2);
         list.addLast(3);
         list.addLast(4);
         list.addLast(5);
-        System.out.println(list.get(10));
+        assertEquals(4, list.get(3));
     }
 
     @Test
-    public void main05() {
+    public void testInsertAndRemove() {
         SinglyLinkedList list = new SinglyLinkedList();
         list.addLast(1);
         list.addLast(2);
@@ -76,13 +74,11 @@ public class TestLinkedList {
         list.addLast(5);
         list.insert(5, 8);
         list.remove(0);
-        for (Integer i : list) {
-            System.out.println(i);
-        }
+        assertIterableEquals(List.of(2, 3, 4, 5, 8), list);
     }
 
     @Test
-    public void main06() {
+    public void testGet() {
         SinglyLinkedListSentinel list = new SinglyLinkedListSentinel();
         list.addLast(1);
         list.addLast(2);
@@ -90,9 +86,6 @@ public class TestLinkedList {
         list.addLast(4);
         list.addLast(5);
         list.insert(5, 8);
-        for (Integer i : list) {
-            System.out.println(i);
-        }
         /*list.loop1(new Consumer<Integer>() {
             @Override
             public void accept(Integer integer) {
@@ -105,50 +98,46 @@ public class TestLinkedList {
                 System.out.println(integer);
             }
         });*/
-        System.out.println(list.get(8));
+        assertThrows(IllegalArgumentException.class, () -> {
+            list.get(8);
+        });
     }
 
     @Test
-    public void main07() {
+    public void testRemoveFirst() {
         SinglyLinkedListSentinel list = new SinglyLinkedListSentinel();
         list.addLast(1);
         list.addLast(2);
         list.addLast(3);
         list.insert(3, 5);
         list.addFirst(9);
-        for (Integer i : list) {
-            System.out.println(i);
-        }
+        assertIterableEquals(List.of(9, 1, 2, 3, 5), list);
 
         list.removeFirst();
         list.remove(2);
 
-        for (Integer i : list) {
-            System.out.println(i);
-        }
-        list.remove(5);
+        assertIterableEquals(List.of(1, 2, 5), list);
+        assertThrows(IllegalArgumentException.class, () -> {
+            list.remove(5);
+        });
     }
 
     @Test
-    public void main08() {
+    public void testDoublyLinkedListSentinel() {
         DoublyLinkedListSentinel list = new DoublyLinkedListSentinel();
         list.addFirst(1);
         list.addLast(6);
         list.insert(0, 8);
         list.insert(2, 5);
-        for (Integer i : list) {
-            System.out.println(i);
-        }
+        assertIterableEquals(List.of(8, 1, 5, 6), list);
         list.removeFirst();
         list.removeLast();
         list.remove(1);
-        for (Integer i : list) {
-            System.out.println(i);
-        }
+        assertIterableEquals(List.of(1), list);
     }
 
     @Test
-    public void main09() {
+    public void testDoublyLinkedListAddLast() {
         DoublyCircleLinkedListSentinel list = new DoublyCircleLinkedListSentinel();
         /*list.addFirst(1);
         list.addFirst(2);
@@ -162,9 +151,7 @@ public class TestLinkedList {
         list.addLast(4);
         list.addLast(5);
 
-        for (Integer i : list) {
-            System.out.println(i);
-        }
+        assertIterableEquals(List.of(1, 2, 3, 4, 5), list);
 
         list.removeFirst();
         list.removeFirst();
@@ -173,13 +160,11 @@ public class TestLinkedList {
         list.removeFirst();
         //list.removeFirst();
 
-        for (Integer i : list) {
-            System.out.println(i);
-        }
+        assertIterableEquals(List.of(), list);
     }
 
     @Test
-    public void main10() {
+    public void testRemove() {
         DoublyCircleLinkedListSentinel list = new DoublyCircleLinkedListSentinel();
         list.addLast(1);
         list.addLast(2);
@@ -191,13 +176,11 @@ public class TestLinkedList {
         list.removeLast();
         list.removeByValue(3);
 
-        for (Integer i : list) {
-            System.out.println(i);
-        }
+        assertIterableEquals(List.of(2, 4), list);
     }
 
     @Test
-    public void main11() {
+    public void testSinglyLinkedListLoop() {
         SinglyLinkedList list = new SinglyLinkedList();
         list.addLast(1);
         list.addLast(2);

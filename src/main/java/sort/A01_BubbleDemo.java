@@ -32,8 +32,6 @@ public class A01_BubbleDemo {
         }
 
         printArr(arr);
-
-
     }
 
     private static void printArr(int[] arr) {
