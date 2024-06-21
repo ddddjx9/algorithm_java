@@ -1,4 +1,4 @@
-package search.cn.edu.ustb.search;
+package search;
 
 
 public class BinarySearchLeftMost {

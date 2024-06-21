@@ -1,4 +1,4 @@
-package search.cn.edu.ustb.search;
+package search;
 
 public class A02_BinarySearchDemo1 {
     public static void main(String[] args) {

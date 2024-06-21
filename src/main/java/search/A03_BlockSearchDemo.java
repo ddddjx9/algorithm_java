@@ -1,4 +1,4 @@
-package search.cn.edu.ustb.search;
+package search;
 
 public class A03_BlockSearchDemo {
     public static void main(String[] args) {
