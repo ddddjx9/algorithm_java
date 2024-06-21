@@ -2,6 +2,7 @@ package cn.ustb.edu.test;
 
 import org.junit.jupiter.api.Test;
 import priorityQueue.Entry;
+import priorityQueue.MaxHeapImitate;
 import priorityQueue.OrderedArrayImitate;
 import priorityQueue.UnorderedArrayImitate;
 
@@ -37,6 +38,24 @@ public class TestPriorityQueue {
         assertFalse(queue.offer(new Entry("task6", 9)));
 
         assertEquals(5, queue.poll().priority());
+        assertEquals(4, queue.poll().priority());
+        assertEquals(3, queue.poll().priority());
+        assertEquals(2, queue.poll().priority());
+        assertEquals(1, queue.poll().priority());
+    }
+
+    @Test
+    public void testHeapImitate() {
+        MaxHeapImitate<Entry> queue = new MaxHeapImitate<>(5);
+        queue.offer(new Entry("task1", 4));
+        queue.offer(new Entry("task2", 3));
+        queue.offer(new Entry("task3", 2));
+        queue.offer(new Entry("task4", 5));
+        queue.offer(new Entry("task5", 1));
+        assertFalse(queue.offer(new Entry("task6", 9)));
+
+        assertEquals(5, queue.poll().priority());
+        assertEquals(4, queue.peek().priority());
         assertEquals(4, queue.poll().priority());
         assertEquals(3, queue.poll().priority());
         assertEquals(2, queue.poll().priority());

@@ -1,4 +1,4 @@
-package search.src.cn.edu.ustb.search;
+package search.cn.edu.ustb.search;
 
 import java.util.Arrays;
 

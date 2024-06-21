@@ -45,10 +45,12 @@ public class ListNode {
         sb.append(p.val);
         sb.append(",");
         p = p.next;
-        //除此之外，想要恢复原样，就将下面的this改为null即可
-        while (p != this) {
+        //除此之外，想要恢复无环时候的打印方法，就将下面的this改为null即可
+        //如果此处是有环打印，但是需要进行无环打印：将下面的this改为null
+        //如果此处是无环打印，但是需要进行有环打印，将下面的null改为this
+        while (p != null) {
             sb.append(p.val);
-            if (p.next != this) {
+            if (p.next != null) {
                 sb.append(",");
             }
             p = p.next;
