@@ -6,8 +6,11 @@ import java.util.Queue;
 
 /**
  * 引入辅助变量size来判断队列的空和满
+ * <p>
  * 在初始化队列的时候限定了队列的长度，array.length
+ * <p>
  * 那么size只要等于array.length表明队列中已经存满了元素
+ * <p>
  * 如果size等于0，表明队列中还没有元素
  *
  * @param <E> 队列中元素的类型
