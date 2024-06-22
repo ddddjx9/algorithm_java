@@ -23,7 +23,7 @@ public class TraversalRecursion {
     }
 
     /**
-     * 前序遍历
+     * 前序遍历: LeetCode144
      *
      * @param node 二叉树的根节点
      */
@@ -39,7 +39,7 @@ public class TraversalRecursion {
     }
 
     /**
-     * 中序遍历
+     * 中序遍历: LeetCode94
      *
      * @param node 二叉树的根节点
      */
@@ -54,7 +54,7 @@ public class TraversalRecursion {
     }
 
     /**
-     * 后序遍历
+     * 后序遍历: LeetCode145
      *
      * @param node 二叉树的根节点
      */
