@@ -1,4 +1,4 @@
-package cn.ustb.edu.test;
+package cn.edu.ustb.test;
 
 import myQueue.*;
 import org.junit.jupiter.api.Test;

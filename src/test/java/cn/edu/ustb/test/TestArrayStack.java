@@ -1,4 +1,4 @@
-package cn.ustb.edu.test;
+package cn.edu.ustb.test;
 
 import myStack.ArrayStack;
 import org.junit.jupiter.api.Test;

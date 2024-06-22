@@ -1,4 +1,4 @@
-package cn.ustb.edu.test;
+package cn.edu.ustb.test;
 
 import org.junit.jupiter.api.Test;
 import priorityQueue.Entry;
