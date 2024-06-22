@@ -5,7 +5,7 @@ import myQueue.LinkedListImitateQueue;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Test {
+public class LevelOrder {
     public static void main(String[] args) {
         TreeNode root = new TreeNode(
                 new TreeNode(
@@ -21,7 +21,7 @@ public class Test {
                 )
         );
 
-        List<List<Integer>> lists = new Test().levelOrder(root);
+        List<List<Integer>> lists = new LevelOrder().levelOrder(root);
         for (List<Integer> list : lists) {
             System.out.println(list);
         }
