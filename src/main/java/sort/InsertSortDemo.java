@@ -1,7 +1,6 @@
 package sort;
 
-
-public class A03_InsertDemo {
+public class InsertSortDemo {
     public static void main(String[] args) {
         /*
             插入排序：
@@ -41,11 +40,9 @@ public class A03_InsertDemo {
     }
 
     private static void printArr(int[] arr) {
-        //3.遍历数组
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i] + " ");
+        for (int num : arr) {
+            System.out.print(num + " ");
         }
         System.out.println();
     }
-
 }

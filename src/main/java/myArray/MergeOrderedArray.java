@@ -47,7 +47,7 @@ public class MergeOrderedArray {
     public void merge2(int[] nums1, int i, int iEnd, int j, int jEnd, int[] nums2) {
         //使用非递归思路实现，循环判断：
         //将索引k改成方法内的局部变量
-        int k = 0;
+        int k = i;
         while (i <= iEnd && j <= jEnd) {
             if (nums1[i] < nums1[j]) {
                 nums2[k] = nums1[i];

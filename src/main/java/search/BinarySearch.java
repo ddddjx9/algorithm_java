@@ -1,21 +1,19 @@
 package search;
 
-public class A02_BinarySearchDemo1 {
+public class BinarySearch {
     public static void main(String[] args) {
-        //二分查找/折半查找
-        //核心：
-        //每次排除一半的查找范围
-
-        //需求：定义一个方法利用二分查找，查询某个元素在数组中的索引
-        //数据如下：{7, 23, 79, 81, 103, 127, 131, 147}
-
 
         int[] arr = {7, 23, 79, 81, 103, 127, 131, 147};
         System.out.println(binarySearch(arr, 150));
-
     }
 
-
+    /**
+     * 二分查找/折半查找，每次排除一半的查找范围，查询某个元素在数组中的索引
+     *
+     * @param arr    待查找的数组
+     * @param number 待查找的元素
+     * @return 返回某个元素在数组中的索引
+     */
     public static int binarySearch(int[] arr, int number) {
         //1.定义两个变量记录要查找的范围
         int min = 0;
@@ -42,7 +40,6 @@ public class A02_BinarySearchDemo1 {
                 //找到了
                 return mid;
             }
-
         }
     }
 }

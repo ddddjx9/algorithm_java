@@ -71,5 +71,4 @@ public class Padding01String {
     public static void clear(char[] arr) {
         Arrays.fill(arr, ' ');
     }
-
 }

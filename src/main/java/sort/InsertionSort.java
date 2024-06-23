@@ -10,6 +10,9 @@ public class InsertionSort {
         int[] b = {8, 6, 1, 4, 7, 3, 2, 9, 0};
         insertionSort2(b);
         System.out.println(Arrays.toString(b));
+        int[] arr = {9, 3, 7, 2, 5, 8, 1, 4};
+        insertionSort3(arr);
+        System.out.println(Arrays.toString(arr));
     }
 
     public static void insertionSort1(int[] a) {
@@ -18,6 +21,10 @@ public class InsertionSort {
 
     public static void insertionSort2(int[] a) {
         insertion2(a, 1);
+    }
+
+    public static void insertionSort3(int[] arr) {
+        insertion3(arr);
     }
 
     /**
@@ -63,5 +70,21 @@ public class InsertionSort {
             i--;
         }
         insertion2(a, low + 1);
+    }
+
+    private static void insertion3(int[] arr) {
+        for (int low = 1; low < arr.length; low++) {
+            int t = arr[low];
+            int i = low - 1;
+            //自右向左寻找插入位置，如果比插入元素大，则不断右移，空出插入位置
+            while (i >= 0 && t < arr[i]) {
+                arr[i + 1] = arr[i];
+                i--;
+            }
+            //找到插入位置
+            if (i != low - 1) {
+                arr[i + 1] = t;
+            }
+        }
     }
 }

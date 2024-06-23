@@ -2,7 +2,7 @@ package sort;
 
 import java.util.Arrays;
 
-public class A05_QuickSortDemo {
+public class QuickSortDemo {
     public static void main(String[] args) {
         System.out.println(Integer.MAX_VALUE);
         System.out.println(Integer.MIN_VALUE);
@@ -15,38 +15,22 @@ public class A05_QuickSortDemo {
 
         int[] arr = {1, 1, 6, 2, 7, 9, 3, 4, 5, 1, 10, 8};
 
-
-        //int[] arr = new int[1000000];
-
-       /* Random r = new Random();
-        for (int i = 0; i < arr.length; i++) {
-            arr[i] = r.nextInt();
-        }*/
-
-
         long start = System.currentTimeMillis();
         quickSort(arr, 0, arr.length - 1);
         long end = System.currentTimeMillis();
 
-        System.out.println(end - start);//149
+        System.out.println(end - start); //测试快排的效率
 
         System.out.println(Arrays.toString(arr));
-        //课堂练习：
-        //我们可以利用相同的办法去测试一下，选择排序，冒泡排序以及插入排序运行的效率
-        //得到一个结论：快速排序真的非常快。
-
-       /* for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i] + " ");
-        }*/
-
     }
 
-
-    /*
-     *   参数一：我们要排序的数组
-     *   参数二：要排序数组的起始索引
-     *   参数三：要排序数组的结束索引
-     * */
+    /**
+     * 快速排序
+     *
+     * @param arr 我们要排序的数组
+     * @param i   要排序数组的起始索引
+     * @param j   要排序数组的结束索引
+     */
     public static void quickSort(int[] arr, int i, int j) {
         //定义两个变量记录要查找的范围
         int start = i;
@@ -86,18 +70,17 @@ public class A05_QuickSortDemo {
             arr[end] = temp;
         }
 
-        //当start和end指向了同一个元素的时候，那么上面的循环就会结束
+        //当start和end指向了同一个元素的时候，循环就会结束
         //表示已经找到了基准数在数组中应存入的位置
         //基准数归位
-        //就是拿着这个范围中的第一个数字，跟start指向的元素进行交换
+        //用这个范围中的第一个数字，跟start指向的元素进行交换
         int temp = arr[i];
         arr[i] = arr[start];
         arr[start] = temp;
 
-        //确定6左边的范围，重复刚刚所做的事情
+        //确定6左边的范围，递归
         quickSort(arr, i, start - 1);
-        //确定6右边的范围，重复刚刚所做的事情
+        //确定6右边的范围，递归
         quickSort(arr, start + 1, j);
-
     }
 }

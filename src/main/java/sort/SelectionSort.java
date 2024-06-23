@@ -1,6 +1,6 @@
 package sort;
 
-public class A02_SelectionDemo {
+public class SelectionSort {
     public static void main(String[] args) {
         //1.定义数组
         int[] arr1 = {2, 4, 5, 3, 1};
@@ -12,32 +12,18 @@ public class A02_SelectionDemo {
     }
 
     private static void selectionSort1(int[] arr) {
-    /*
-        选择排序：
-            1，从0索引开始，跟后面的元素一一比较。
-            2，小的放前面，大的放后面。
-            3，第一次循环结束后，最小的数据已经确定。
-            4，第二次循环从1索引开始以此类推。
-     */
+        /*
+            选择排序：
+                1，从0索引开始，跟后面的元素一一比较。
+                2，小的放前面，大的放后面。
+                3，第一次循环结束后，最小的数据已经确定。
+                4，第二次循环从1索引开始以此类推。
+         */
 
-        //2.利用选择排序让数组变成 1 2 3 4 5
-       /* //第一轮：
-        //从0索引开始，跟后面的元素一一比较。
-        for (int i = 0 + 1; i < arr.length; i++) {
-            //拿着0索引跟后面的数据进行比较
-            if(arr[0] > arr[i]){
-                int temp = arr[0];
-                arr[0] = arr[i];
-                arr[i] = temp;
-            }
-        }*/
-
-        //最终代码：
         //外循环：几轮
-        //i:表示这一轮中，我拿着哪个索引上的数据跟后面的数据进行比较并交换
+        //i:表示这一轮中，用哪个索引上的数据跟后面的数据进行比较并交换
         for (int i = 0; i < arr.length - 1; i++) {
-            //内循环：每一轮我要干什么事情？
-            //拿着i跟i后面的数据进行比较交换
+            //内循环：拿着i跟i后面的数据进行比较交换
             for (int j = i + 1; j < arr.length; j++) {
                 if (arr[i] > arr[j]) {
                     swap(arr, i, j);
@@ -47,8 +33,10 @@ public class A02_SelectionDemo {
     }
 
     public static void selectionSort2(int[] arr) {
-        /*选择的轮数：arr.length-1
-        交换的索引位置，初始值a.length-1，每次递减*/
+        /*
+        选择的轮数：arr.length-1
+        交换的索引位置，初始值a.length-1，每次递减
+        */
         for (int right = arr.length - 1; right > 0; right--) {
             int max = right;
             for (int i = 0; i < right; i++) {
@@ -72,9 +60,8 @@ public class A02_SelectionDemo {
     }
 
     private static void printArr(int[] arr) {
-        //3.遍历数组
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i] + " ");
+        for (int num : arr) {
+            System.out.print(num + " ");
         }
         System.out.println();
     }
