@@ -18,6 +18,7 @@ public class ReverseLinkedList {
         ListNode p = head;
         while (p != null) {
             n1 = new ListNode(p.val, n1);
+            //System.out.println(n1);
             head = n1;
             p = p.next;
         }

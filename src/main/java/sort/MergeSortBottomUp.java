@@ -13,6 +13,7 @@ public class MergeSortBottomUp {
     public static void mergeSort(int[] arr) {
         int length = arr.length;
         int[] temp = new int[arr.length];
+        //利用数学规律对递归规律进行总结，转换成循环处理
         for (int width = 1; width < length; width <<= 1) {
             for (int left = 0; left < length; left += 2 * width) {
                 //确保索引范围

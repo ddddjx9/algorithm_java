@@ -36,7 +36,6 @@ public class BFSQueen {
 
     public static void dfs(int row) {
         if (row > 2 * n) {
-
             count++;
             return;
         }
@@ -61,7 +60,6 @@ public class BFSQueen {
                 }
             }
         }
-
     }
 
 
@@ -80,7 +78,6 @@ public class BFSQueen {
                 return false;
             }
         }
-
         return true;
     }
 
@@ -105,7 +102,6 @@ public class BFSQueen {
                 return false;
             }
         }
-
         return true;
     }
 }

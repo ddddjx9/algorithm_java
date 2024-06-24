@@ -4,15 +4,6 @@ import java.util.Arrays;
 
 public class QuickSortDemo {
     public static void main(String[] args) {
-        System.out.println(Integer.MAX_VALUE);
-        System.out.println(Integer.MIN_VALUE);
-      /*
-        快速排序：
-            第一轮：以0索引的数字为基准数，确定基准数在数组中正确的位置。
-            比基准数小的全部在左边，比基准数大的全部在右边。
-            后面以此类推。
-      */
-
         int[] arr = {1, 1, 6, 2, 7, 9, 3, 4, 5, 1, 10, 8};
 
         long start = System.currentTimeMillis();
@@ -25,7 +16,16 @@ public class QuickSortDemo {
     }
 
     /**
-     * 快速排序
+     * 快速排序：
+     * <p>
+     * &nbsp;&nbsp;第一轮：以0索引的数字为基准数，确定基准数在数组中正确的位置
+     * </p>
+     * <p>
+     * &nbsp;&nbsp;比基准数小的全部在左边，比基准数大的全部在右边
+     * </p>
+     * <p>
+     * &nbsp;&nbsp;后面以此类推
+     * </p>
      *
      * @param arr 我们要排序的数组
      * @param i   要排序数组的起始索引
