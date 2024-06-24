@@ -41,7 +41,6 @@ public class QuickSortDemo {
             return;
         }
 
-
         //记录基准数
         int baseNumber = arr[i];
         //利用循环找到要交换的数字
@@ -62,8 +61,7 @@ public class QuickSortDemo {
                 }
                 start++;
             }
-
-
+            
             //把end和start指向的元素进行交换
             int temp = arr[start];
             arr[start] = arr[end];
