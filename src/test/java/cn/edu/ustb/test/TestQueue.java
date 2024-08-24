@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class TestQueue {
     @Test
     public void testOffer() {
-        LinkedListImitateQueue<Integer> queue = new LinkedListImitateQueue(4);
+        LinkedListImitateQueue<Integer> queue = new LinkedListImitateQueue<>(4);
         //queue.peek();
         queue.offer(1);
         queue.offer(2);

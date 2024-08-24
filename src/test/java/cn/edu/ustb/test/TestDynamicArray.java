@@ -4,7 +4,6 @@ import dynamicArrayDemo.DynamicArray;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
-import java.util.function.Consumer;
 
 import static org.junit.jupiter.api.Assertions.assertIterableEquals;
 
@@ -18,12 +17,7 @@ public class TestDynamicArray {
         da.add(2, 4);
         assertIterableEquals(List.of(1, 2, 4, 5), da);
 
-        da.foreach(new Consumer<Integer>() {
-            @Override
-            public void accept(Integer integer) {
-                System.out.println(integer);
-            }
-        });
+        da.foreach(System.out::println);
 
         da.remove(2);
         assertIterableEquals(List.of(1, 2, 5), da);

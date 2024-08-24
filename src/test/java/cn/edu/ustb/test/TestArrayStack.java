@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class TestArrayStack {
     @Test
     public void testArrayStack() {
-        ArrayStack<Integer> stack = new ArrayStack(5);
+        ArrayStack<Integer> stack = new ArrayStack<>(5);
         stack.push(1);
         stack.push(2);
         stack.push(3);
