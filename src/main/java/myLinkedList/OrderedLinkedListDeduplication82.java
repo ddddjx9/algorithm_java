@@ -14,7 +14,7 @@ public class OrderedLinkedListDeduplication82 {
     }
 
     /*
-    LeetCode 82:
+    LeetCode6 82:
     这次和上次不一样的是，重复元素全部去除，一个不留
      */
     public ListNode deduplicationList1(ListNode p) {

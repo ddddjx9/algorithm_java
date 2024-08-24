@@ -3,7 +3,7 @@ package myLinkedList;
 public class MergeOrderedLinkedList {
     public static void main(String[] args) {
         //测试用例....
-        //LeetCode 21
+        //LeetCode6 21
         ListNode n45 = new ListNode(7, null);
         ListNode n44 = new ListNode(3, n45);
         ListNode n43 = new ListNode(2, n44);

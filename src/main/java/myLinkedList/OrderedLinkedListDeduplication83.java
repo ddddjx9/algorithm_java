@@ -15,7 +15,7 @@ public class OrderedLinkedListDeduplication83 {
 
     public ListNode deduplication1(ListNode head) {
         /*
-        LeetCode 83:
+        LeetCode6 83:
         有序链表去重，相同元素在原始链表中无论有多少个，仅仅
         保留一个即可
          */
