@@ -8,8 +8,8 @@ package leetcode;
  */
 public class LeetCode14 {
     public static void main(String[] args) {
-        System.out.println(new LeetCode14().longestCommonPrefix(new String[]{"flower", "flow", "flight", ""}));
-        System.out.println(new LeetCode14().longestCommonPrefix(new String[]{"dog", "racecar", "car"}));
+        //System.out.println(new LeetCode14().longestCommonPrefix(new String[]{"flower", "flow", "flight", ""}));
+        System.out.println(new LeetCode14().longestCommonPrefix(new String[]{"a"}));
     }
 
     public String longestCommonPrefix(String[] strs) {
@@ -20,11 +20,15 @@ public class LeetCode14 {
         if (strs.length == 1) {
             return strs[0];
         }
+
         StringBuilder sb = new StringBuilder();
 
-        int length = 0;
+        int length = Integer.MAX_VALUE;
         for (int i = 0; i < strs.length - 1; i++) {
-            length = Math.min(strs[i].length(), strs[i + 1].length());
+            int temp = Math.min(strs[i].length(), strs[i + 1].length());
+            if (temp < length) {
+                length = temp;
+            }
         }
 
         for (int i = 0; i < length; i++) {
