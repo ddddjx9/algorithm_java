@@ -1,4 +1,4 @@
-package cn.edu.ustb.leetcode;
+package leetcode;
 
 import java.math.BigInteger;
 import java.util.ArrayList;
@@ -15,7 +15,7 @@ import java.util.List;
 public class LeetCode18 {
     public static void main(String[] args) {
         //System.out.println(new LeetCode18().fourSum(new int[]{0, 0, 0, 0}, 0));
-        System.out.println(new LeetCode18().fourSumPrune(new int[]{1,0,-1,0,-2,2}, 0));
+        System.out.println(new LeetCode18().fourSumPrune(new int[]{1, 0, -1, 0, -2, 2}, 0));
     }
 
     /**
@@ -71,7 +71,8 @@ public class LeetCode18 {
 
     /**
      * 采用剪枝手段，并采用双指针进一步简化循环，减少时间的耗费
-     * @param nums 传入的数组
+     *
+     * @param nums   传入的数组
      * @param target 目标值
      * @return 返回能够加和为目标值的四元组
      */

@@ -1,4 +1,4 @@
-package cn.edu.ustb.leetcode;
+package leetcode;
 
 public class LeetCode19 {
     public static void main(String[] args) {
