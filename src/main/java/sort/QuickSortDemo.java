@@ -11,7 +11,6 @@ public class QuickSortDemo {
         long end = System.currentTimeMillis();
 
         System.out.println(end - start); //测试快排的效率
-
         System.out.println(Arrays.toString(arr));
     }
 
@@ -28,57 +27,48 @@ public class QuickSortDemo {
      * </p>
      *
      * @param arr 我们要排序的数组
-     * @param i   要排序数组的起始索引
-     * @param j   要排序数组的结束索引
+     * @param low   要排序数组的起始索引
+     * @param high   要排序数组的结束索引
      */
-    public static void quickSort(int[] arr, int i, int j) {
-        //定义两个变量记录要查找的范围
-        int start = i;
-        int end = j;
+    public static void quickSort(int[] arr, int low, int high) {
+        if (low < high) {
+            int pivotIndex = partition(arr, low, high);
 
-        if (start > end) {
-            //递归的出口
-            return;
+            quickSort(arr, low, pivotIndex - 1);
+            quickSort(arr, pivotIndex + 1, high);
+        }
+    }
+
+    private static int partition(int[] arr, int low, int high) {
+
+        int pivot = arr[low];
+        int left = low + 1;
+        int right = high;
+
+        while (true) {
+            while (left <= right && arr[left] <= pivot) {
+                left++;
+            }
+
+            while (left <= right && arr[right] >= pivot) {
+                right--;
+            }
+
+            if (left < right) {
+                swap(arr, left, right);
+            } else {
+                break;
+            }
         }
 
-        //记录基准数
-        int baseNumber = arr[i];
-        //利用循环找到要交换的数字
-        while (start != end) {
-            //利用end，从后往前开始找，找比基准数小的数字
-            //int[] arr = {1, 6, 2, 7, 9, 3, 4, 5, 10, 8};
-            while (true) {
-                if (end <= start || arr[end] < baseNumber) {
-                    break;
-                }
-                end--;
-            }
-            System.out.println(end);
-            //利用start，从前往后找，找比基准数大的数字
-            while (true) {
-                if (end <= start || arr[start] > baseNumber) {
-                    break;
-                }
-                start++;
-            }
-            
-            //把end和start指向的元素进行交换
-            int temp = arr[start];
-            arr[start] = arr[end];
-            arr[end] = temp;
-        }
+        swap(arr, low, right);
 
-        //当start和end指向了同一个元素的时候，循环就会结束
-        //表示已经找到了基准数在数组中应存入的位置
-        //基准数归位
-        //用这个范围中的第一个数字，跟start指向的元素进行交换
+        return right;
+    }
+
+    private static void swap(int[] arr, int i, int j) {
         int temp = arr[i];
-        arr[i] = arr[start];
-        arr[start] = temp;
-
-        //确定6左边的范围，递归
-        quickSort(arr, i, start - 1);
-        //确定6右边的范围，递归
-        quickSort(arr, start + 1, j);
+        arr[i] = arr[j];
+        arr[j] = temp;
     }
 }
