@@ -62,7 +62,6 @@ public class QuickSortDemo {
         }
 
         swap(arr, low, right);
-
         return right;
     }
 
