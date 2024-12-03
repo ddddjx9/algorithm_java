@@ -1,5 +1,7 @@
 package myBinaryTree;
 
+import myBinaryTree.dataStructure.TreeNode;
+
 public class JudgeBinaryTree {
     /**
      * 调用isSymmetrical方法判断二叉树是否对称

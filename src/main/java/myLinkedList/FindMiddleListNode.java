@@ -1,5 +1,7 @@
 package myLinkedList;
 
+import myLinkedList.dataStructure.ListNode;
+
 public class FindMiddleListNode {
     public static void main(String[] args) {
         ListNode n14 = new ListNode(8, null);

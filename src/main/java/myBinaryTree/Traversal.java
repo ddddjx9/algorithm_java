@@ -1,5 +1,7 @@
 package myBinaryTree;
 
+import myBinaryTree.dataStructure.TreeNode;
+
 import java.util.LinkedList;
 
 /**

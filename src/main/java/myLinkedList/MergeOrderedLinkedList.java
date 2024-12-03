@@ -1,5 +1,7 @@
 package myLinkedList;
 
+import myLinkedList.dataStructure.ListNode;
+
 public class MergeOrderedLinkedList {
     public static void main(String[] args) {
         //测试用例....

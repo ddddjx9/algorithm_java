@@ -1,5 +1,7 @@
 package myLinkedList;
 
+import myLinkedList.dataStructure.ListNode;
+
 public class RemoveListElements {
     public static void main(String[] args) {
 //		ListNode o7 = new ListNode(6, null);

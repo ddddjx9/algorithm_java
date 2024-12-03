@@ -1,5 +1,7 @@
 package myLinkedList;
 
+import myLinkedList.dataStructure.ListNode;
+
 public class RemoveLastElements {
     static int count = 0;
 

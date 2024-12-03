@@ -1,6 +1,7 @@
 package priorityQueue;
 
-import myLinkedList.ListNode;
+import myLinkedList.dataStructure.ListNode;
+import priorityQueue.dataStructure.MinHeap;
 
 public class MinHeapMergeKLists {
     public static void main(String[] args) {

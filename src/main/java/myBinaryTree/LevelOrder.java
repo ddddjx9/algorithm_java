@@ -1,6 +1,7 @@
 package myBinaryTree;
 
-import myQueue.LinkedListImitateQueue;
+import myBinaryTree.dataStructure.TreeNode;
+import myQueue.dataStructure.LinkedListImitateQueue;
 
 import java.util.ArrayList;
 import java.util.List;

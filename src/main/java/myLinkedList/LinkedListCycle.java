@@ -1,5 +1,7 @@
 package myLinkedList;
 
+import myLinkedList.dataStructure.ListNode;
+
 public class LinkedListCycle {
     public static void main(String[] args) {
         ListNode n10 = new ListNode(10, null);

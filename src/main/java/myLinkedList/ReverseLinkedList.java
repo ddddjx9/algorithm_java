@@ -1,5 +1,7 @@
 package myLinkedList;
 
+import myLinkedList.dataStructure.ListNode;
+
 public class ReverseLinkedList {
     public static void main(String[] args) {
         ListNode o5 = new ListNode(5, null);

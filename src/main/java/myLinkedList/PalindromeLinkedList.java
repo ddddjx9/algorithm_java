@@ -1,5 +1,7 @@
 package myLinkedList;
 
+import myLinkedList.dataStructure.ListNode;
+
 public class PalindromeLinkedList {
     public static void main(String[] args) {
         ListNode n5 = new ListNode(1, null);

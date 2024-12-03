@@ -3,15 +3,16 @@ package dynamicProgramming;
 public class Maze {
 
     // 迷宫地图
-    private int[][] maze;
+    private final int[][] maze;
 
     // 迷宫大小
-    private int row, col;
+    private final int row;
+    private final int col;
 
     // 方向数组
     //上->右->下->左
-    private int[] dx = {-1, 0, 1, 0};
-    private int[] dy = {0, 1, 0, -1};
+    private final int[] dx = {-1, 0, 1, 0};
+    private final int[] dy = {0, 1, 0, -1};
 
     public Maze(int[][] maze) {
         this.maze = maze;
@@ -56,5 +57,4 @@ public class Maze {
             System.out.println("No path!");
         }
     }
-
 }

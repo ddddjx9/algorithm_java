@@ -17,8 +17,8 @@ public class DynamicArray implements Iterable<Integer> {
      * @param element 待添加的元素
      */
     public void addLast(int element) {
-        /*arr[index] = element;
-        size++;*/
+        // arr[index] = element;
+        // size++;
         add(size, element);
     }
 

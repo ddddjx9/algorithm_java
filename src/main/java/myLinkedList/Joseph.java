@@ -1,5 +1,7 @@
 package myLinkedList;
 
+import myLinkedList.dataStructure.SinglyCircleListNode;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 

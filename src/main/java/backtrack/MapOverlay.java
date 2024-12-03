@@ -8,7 +8,7 @@ public class MapOverlay {
     static int numColors;
 
     public void findColorMethod(ColoredMap coloredMap, int startNode, int numColors) { // 增加 startNode 参数
-        this.numColors = numColors;
+        MapOverlay.numColors = numColors;
         ColorMethod(coloredMap, startNode, new HashMap<>()); // 使用新的 map 来保存当前递归层的着色方案
         map.clear(); // 清除 map 中的记录
     }

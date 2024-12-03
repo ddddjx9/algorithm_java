@@ -1,5 +1,8 @@
 package graph;
 
+import graph.dataStructure.Edge;
+import graph.dataStructure.Vertex;
+
 import java.util.ArrayList;
 import java.util.List;
 
