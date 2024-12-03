@@ -1,4 +1,4 @@
-package leetcode;
+package leetcode.hash;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -52,7 +52,7 @@ public class LeetCode1 {
      * @return 返回两数之和为目标值的数组所在的索引
      */
     public int[] twoSumUseHashMap(int[] nums, int target) {
-        //记录数组中某些元素的值和其下角标
+        // 记录数组中某些元素的值和其下角标
         HashMap<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
             if (map.containsKey(target - nums[i])) {

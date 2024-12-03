@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TestLeetCode5 {
     @Test
-    public void test() {
+    public void testLeetCode5() {
         assertEquals("bb", longestPalindrome("bb"));
     }
 

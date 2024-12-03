@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TestLeetCode3 {
     @Test
-    public void test() {
+    public void testLeetCode3() {
         assertEquals(3, new TestLeetCode3().lengthOfLongestSubstring("abcabcbb"));
     }
 

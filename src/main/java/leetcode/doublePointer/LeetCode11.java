@@ -1,4 +1,4 @@
-package leetcode;
+package leetcode.doublePointer;
 
 /**
  * 给定一个长度为 n 的整数数组 height 。有 n 条垂线，第 i 条线的两个端点是 (i, 0) 和 (i, height[i]) 。
@@ -53,9 +53,7 @@ public class LeetCode11 {
             while (left < right) {
                 int row = right - left;
                 int col = Math.min(height[left], height[right]);
-                if (row * col > maxArea) {
-                    maxArea = row * col;
-                }
+                maxArea = Math.max(maxArea, row * col);
 
                 if (height[left] > height[right]) {
                     right--;
