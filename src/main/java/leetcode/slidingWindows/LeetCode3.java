@@ -38,4 +38,28 @@ public class LeetCode3 {
         }
         return maxLength;
     }
+
+    /**
+     * 给定一个字符串 s ，请你找出其中不含有重复字符的 最长子串的长度。
+     *
+     * @param s 给定的字符串
+     * @return 返回其中不含有重复字符的最长字串的长度
+     */
+    public int lengthOfLongestSubstring2(String s) {
+        int maxLength = 0;
+        HashSet<Character> set = new HashSet<>();
+        int startOffset = 0;
+        for (int i = 0; i < s.length(); i++) {
+            char currentChar = s.charAt(i);
+            // 如果当前字符已经在集合中（出现重复），需要收缩窗口，移除窗口起始位置的字符，直到重复字符被移除
+            while (set.contains(currentChar)) {
+                set.remove(s.charAt(startOffset));
+                startOffset++;
+            }
+            set.add(currentChar);
+            // 更新最长无重复字符子串的长度
+            maxLength = Math.max(maxLength, i - startOffset + 1);
+        }
+        return maxLength;
+    }
 }
