@@ -5,8 +5,9 @@ import java.util.stream.IntStream;
 
 public class LeetCode239 {
     public static void main(String[] args) {
-        int[] nums = {1};
-        int k = 1;
+        int[] nums = {1, 3, -1, -3, 5, 3, 6, 7};
+        int k = 3;
+        // System.out.println(Arrays.toString(new LeetCode239().maxSlidingWindow(nums, k)));
         System.out.println(Arrays.toString(new LeetCode239().maxSlidingWindow2(nums, k)));
     }
 
@@ -41,8 +42,9 @@ public class LeetCode239 {
 
     /**
      * 采用双端队列优化逻辑
+     *
      * @param nums 给定的整数数组
-     * @param k 所给定的目标值
+     * @param k    所给定的目标值
      * @return 返回每个滑动窗口的最大值
      */
     public int[] maxSlidingWindow2(int[] nums, int k) {
