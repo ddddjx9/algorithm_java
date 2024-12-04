@@ -33,7 +33,7 @@ public class LeetCode239 {
         }
 
         ArrayList<Integer> list = new ArrayList<>();
-        for (int i = 0; i < nums.length - 2; i++) {
+        for (int i = 0; i <= nums.length - k; i++) {
             int startOffset = i;
             int max = nums[startOffset];
             while (startOffset < i + k && startOffset < nums.length) {
