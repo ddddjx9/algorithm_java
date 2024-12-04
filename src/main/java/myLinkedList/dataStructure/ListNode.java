@@ -15,7 +15,7 @@ public class ListNode {
     }
 
     public static class List {
-        ListNode head;
+        public ListNode head;
 
         public List(ListNode head) {
             this.head = head;
