@@ -1,6 +1,6 @@
 package leetcode.array;
 
-import java.util.HashMap;
+import java.util.Arrays;
 
 public class LeetCode53 {
     public static void main(String[] args) {
@@ -15,11 +15,16 @@ public class LeetCode53 {
      * </p>
      *
      * @param nums 给定的整数数组
-     * @return
+     * @return 返回一个具有最大和的连续子数组
      */
     public int maxSubArray(int[] nums) {
-        // 暴力解法，直接暴力累加
-        HashMap<String, String> map = new HashMap<>();
-        return 0;
+        int sum = 0;
+        Arrays.sort(nums);
+        for (int num : nums) {
+            if (num > 0) {
+                sum += num;
+            }
+        }
+        return sum;
     }
 }
