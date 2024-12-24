@@ -43,9 +43,7 @@ public class InfixExpression {
                         }
                     }
                 }
-                case '(' -> {
-                    stack.push(c);
-                }
+                case '(' -> stack.push(c);
                 case ')' -> {
                     //在已经有左括号出现的情况下，不可能出现栈空的情况
                     //为了防止idea报出警告，加入非空判断
@@ -55,9 +53,7 @@ public class InfixExpression {
                     //将左括号弹出栈
                     stack.pop();
                 }
-                default -> {
-                    sb.append(c);
-                }
+                default -> sb.append(c);
             }
         }
         while (!stack.isEmpty()) {

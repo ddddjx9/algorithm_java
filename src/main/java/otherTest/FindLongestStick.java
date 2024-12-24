@@ -22,8 +22,8 @@ public class FindLongestStick {
         // 1 1 2 2 3 4 5
         Arrays.sort(arr);
         int sum = 0;
-        for (int i = 0; i < arr.length; i++) {
-            sum += arr[i];
+        for (int j : arr) {
+            sum += j;
         }
         int half = sum / 2;
         int res = 0;

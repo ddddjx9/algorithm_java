@@ -1,5 +1,7 @@
 package cn.edu.ustb.assertUtils;
 
+import org.jetbrains.annotations.Contract;
+
 import java.util.List;
 import java.util.stream.IntStream;
 
@@ -13,6 +15,7 @@ public class JudgeNestedArray {
      * @param list2 另一个嵌套列表
      * @return 返回两个嵌套列表是否相等
      */
+    @Contract("null, _ -> false; !null, null -> false")
     public static <T> boolean compareListOfListsWithStream(List<List<T>> list1, List<List<T>> list2) {
         if (list1 == null || list2 == null) {
             return false;

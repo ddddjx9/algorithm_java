@@ -1,10 +1,7 @@
 package dynamicProgramming;
 
-import java.util.Scanner;
-
 public class FindMethodsMaze {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
         /*int m = sc.nextInt();
         int n = sc.nextInt();
         System.out.println(findMethods1(m, n));*/
@@ -60,8 +57,8 @@ public class FindMethodsMaze {
             dp[0][i] = 1;
         }
         if (maze.length == 1 || maze[0].length == 1) {
-            for (int i = 0; i < maze.length; i++) {
-                if (maze[i][0] == 1) {
+            for (int[] ints : maze) {
+                if (ints[0] == 1) {
                     return 0;
                 }
             }
@@ -83,5 +80,4 @@ public class FindMethodsMaze {
         }
         return dp[maze.length - 1][maze[0].length - 1];
     }
-
 }

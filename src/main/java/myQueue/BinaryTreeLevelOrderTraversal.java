@@ -41,6 +41,7 @@ public class BinaryTreeLevelOrderTraversal {
             int nextCount = 0;
             for (int i = 0; i < currentCount; i++) {
                 TreeNode node = queue.poll();
+                assert node != null;
                 System.out.print(node.val + " ");
                 if (node.left != null) {
                     nextCount++;
@@ -70,6 +71,7 @@ public class BinaryTreeLevelOrderTraversal {
             int nextCount = 0;
             for (int i = 0; i < currentCount; i++) {
                 TreeNode node = queue.poll();
+                assert node != null;
                 binaryTree.add(node.val);
                 if (node.left != null) {
                     nextCount++;

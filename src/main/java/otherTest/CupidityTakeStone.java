@@ -1,5 +1,7 @@
 package otherTest;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
@@ -15,8 +17,14 @@ public class CupidityTakeStone {
             stone[i] = scanner.nextLong();
         }
         scanner.close();
-        long startTotal = 0;
-        long endTotal = 0;
+        ArrayList<Long> list = getLongs(n, stone, s);
+        Collections.sort(list);
+        System.out.println(list.get(list.size() - 1));
+    }
+
+    private static @NotNull ArrayList<Long> getLongs(int n, long[] stone, long s) {
+        long startTotal;
+        long endTotal;
         int k = 1;
         ArrayList<Long> list = new ArrayList<>();
         while (2 * k <= n) {
@@ -29,11 +37,10 @@ public class CupidityTakeStone {
                 endTotal += stone[j];
             }
             if (startTotal <= s && endTotal <= s) {
-                list.add((long) (2 * k));
+                list.add(2L * k);
             }
             k++;
         }
-        Collections.sort(list);
-        System.out.println(list.get(list.size() - 1));
+        return list;
     }
 }

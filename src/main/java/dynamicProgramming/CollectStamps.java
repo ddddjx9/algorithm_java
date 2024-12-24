@@ -15,7 +15,7 @@ public class CollectStamps {
         int n = scanner.nextInt();
         int m = scanner.nextInt();
         scanner.close();
-        double dp[][] = new double[m + 1][n + 1];
+        double[][] dp = new double[m + 1][n + 1];
 
         //1. n==1,m==1
         for (int i = 1; i < dp.length; i++) {
@@ -32,5 +32,4 @@ public class CollectStamps {
         }
         System.out.printf("%.4f", dp[m][n]);
     }
-
 }

@@ -30,17 +30,15 @@ public class SplitNumbers {
         if (flag) {
             if (index == n) {
                 int[] temp = new int[n];
-                for (int i = 0; i <= n - 1; i++) {
-                    temp[i] = arr[i];
-                }
+                System.arraycopy(arr, 0, temp, 0, n - 1 + 1);
                 for (int i = 1; i <= n - 1; i++) {
                     for (int j = 0; j < n - 1; j++) {
                         temp[j] = temp[j] + temp[j + 1];
                     }
                 }
                 if (temp[0] == num) {
-                    for (int i = 0; i < arr.length; i++) {
-                        System.out.print(arr[i] + " ");
+                    for (int j : arr) {
+                        System.out.print(j + " ");
                     }
                     flag = false;
                     return;

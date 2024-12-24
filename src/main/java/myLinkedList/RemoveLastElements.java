@@ -74,6 +74,7 @@ public class RemoveLastElements {
             p1 = p1.next;
             p2 = p2.next;
         }
+        assert p1 != null;
         p1.next = p1.next.next;
         return s.next;
     }

@@ -31,14 +31,11 @@ public class SpecialString {
         StringBuilder end = new StringBuilder();
         if (length % 2 == 1) {
             start += str.substring(0, length / 2);
-            end.append(str.substring(length / 2 + 1, length));
+            end.append(str, length / 2 + 1, length);
         } else {
             start += str.substring(0, length / 2);
-            end.append(str.substring(length / 2, length));
+            end.append(str, length / 2, length);
         }
-        if (start.equals(end.reverse().toString())) {
-            return true;
-        }
-        return false;
+        return start.contentEquals(end.reverse());
     }
 }

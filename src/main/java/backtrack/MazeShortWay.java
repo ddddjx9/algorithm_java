@@ -61,9 +61,7 @@ public class MazeShortWay {
 
     public static void main(String[] args) {
         for (int i = 0; i < record.length; i++) {
-            for (int j = 0; j < record.length; j++) {
-                record[i][j] = map[i][j];
-            }
+            System.arraycopy(map[i], 0, record[i], 0, record.length);
         }
         dfs(startX, startY);
     }

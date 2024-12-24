@@ -16,7 +16,7 @@ public class SpecialPalindromic {
         String s = String.valueOf(n);
         int sum = 0;
         for (int i = 0; i < s.length(); i++) {
-            sum += Integer.valueOf(s.charAt(i) - '0');
+            sum += s.charAt(i) - '0';
         }
         return sum;
     }
@@ -36,8 +36,8 @@ public class SpecialPalindromic {
             }
         }
         Collections.sort(list);
-        for (int i = 0; i < list.size(); i++) {
-            System.out.println(list.get(i));
+        for (Integer integer : list) {
+            System.out.println(integer);
         }
     }
 }

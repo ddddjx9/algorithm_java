@@ -1,5 +1,7 @@
 package dynamicArrayDemo;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.function.Consumer;
@@ -119,8 +121,8 @@ public class DynamicArray implements Iterable<Integer> {
      * @return 返回一个迭代器对象，调用匿名内部类中的方法
      */
     @Override
-    public Iterator<Integer> iterator() {
-        return new Iterator<Integer>() {
+    public @NotNull Iterator<Integer> iterator() {
+        return new Iterator<>() {
             int i = 0;
 
             @Override

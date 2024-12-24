@@ -18,8 +18,8 @@ public class ReversePolishNotation {
         //处理负数的加减乘除很麻烦
         //使用自带解析数字的方法parseInt()
         final Stack<Integer> stack = new Stack<>();
-        for (int i = 0; i < tokens.length; i++) {
-            switch (tokens[i]) {
+        for (String token : tokens) {
+            switch (token) {
                 case "+" -> {
                     Integer second = stack.pop();
                     Integer first = stack.pop();
@@ -41,9 +41,7 @@ public class ReversePolishNotation {
                     Integer first = stack.pop();
                     stack.push(first / second);
                 }
-                default -> {
-                    stack.push(Integer.parseInt(tokens[i]));
-                }
+                default -> stack.push(Integer.parseInt(token));
             }
         }
         return stack.pop();

@@ -60,8 +60,8 @@ public class EightQueen {
 
     //写一个方法，可以将皇后摆放的位置输出
     private void print(int[] arr) {
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i] + " ");
+        for (int j : arr) {
+            System.out.print(j + " ");
         }
         System.out.println();
     }

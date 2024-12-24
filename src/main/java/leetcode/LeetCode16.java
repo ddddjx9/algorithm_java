@@ -1,4 +1,4 @@
-package cn.edu.ustb.algorithm;
+package leetcode;
 
 import java.util.Arrays;
 

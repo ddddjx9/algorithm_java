@@ -8,7 +8,8 @@ package leetcode;
  */
 public class LeetCode9 {
     public static void main(String[] args) {
-
+        System.out.println(new LeetCode9().isPalindromePoint(123321));
+        System.out.println(new LeetCode9().isPalindromeStringRev(1221));
     }
 
     /**

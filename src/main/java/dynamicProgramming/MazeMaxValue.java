@@ -20,7 +20,11 @@ public class MazeMaxValue {
         //暴力一点，存储一个变量，如果另一条路价值更大，对其进行更新
         //如果一条路走完了，回溯
         //开始尝试：
-
+        for (int[] ints : maze) {
+            for (int anInt : ints) {
+                System.out.println(anInt);
+            }
+        }
     }
 
     public int maxCoins(int[][] grid) {

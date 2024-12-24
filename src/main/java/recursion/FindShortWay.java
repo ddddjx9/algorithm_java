@@ -26,9 +26,9 @@ public class FindShortWay {
         map[3][2] = 1;
 
         //输出地图
-        for (int i = 0; i < map.length; i++) {
-            for (int j = 0; j < map[i].length; j++) {
-                System.out.print(map[i][j] + " ");
+        for (int[] ints : map) {
+            for (int anInt : ints) {
+                System.out.print(anInt + " ");
             }
             System.out.println();
         }
@@ -67,9 +67,9 @@ public class FindShortWay {
         }
 
         // 输出最短路径地图
-        for (int i = 0; i < map.length; i++) {
-            for (int j = 0; j < map[i].length; j++) {
-                System.out.print(map[i][j] + " ");
+        for (int[] ints : map) {
+            for (int anInt : ints) {
+                System.out.print(anInt + " ");
             }
             System.out.println();
         }

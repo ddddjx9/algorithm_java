@@ -27,9 +27,9 @@ public class MatrixExponentiation {
         }
 
         int[][] calculateMatrix = calculateMatrix(result, arr, n);
-        for (int i = 0; i < calculateMatrix.length; i++) {
+        for (int[] matrix : calculateMatrix) {
             for (int j = 0; j < calculateMatrix.length; j++) {
-                System.out.print(calculateMatrix[i][j] + " ");
+                System.out.print(matrix[j] + " ");
             }
             System.out.println();
         }

@@ -48,6 +48,7 @@ public class LevelOrder {
             ArrayList<Integer> level = new ArrayList<>();
             for (int i = 0; i < currentCount; i++) {
                 TreeNode node = queue.poll();
+                assert node != null;
                 level.add(node.val);
                 if (node.left != null) {
                     queue.offer(node.left);
@@ -63,5 +64,4 @@ public class LevelOrder {
         }
         return result;
     }
-
 }

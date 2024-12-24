@@ -58,5 +58,4 @@ public class MazeMaxValue {
         }
         return dp[n - 1][n - 1];
     }
-
 }

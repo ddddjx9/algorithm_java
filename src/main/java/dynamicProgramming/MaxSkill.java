@@ -35,7 +35,7 @@ public class MaxSkill {
         for (int i = 1; i < n; i++) {
             for (int j = 1; j < m; j++) {
                 // 访问先导技能的数组，如果是除了1没有依赖的先导技能，比如不存在3->2->1这样的连续依赖，递推式不发生改变
-                if (flag[predict[i - 1][0]] != true) {
+                if (!flag[predict[i - 1][0]]) {
                     // 为了避免有连续依赖的关系，一直访问，直到技能的先导技能为1为止，记录这时候的技能序号，下一次如果
                     // 还有技能点，那么就访问它的先导技能的先导技能
                     findPredictSkill(predict, i - 1, predict[i - 1][1]);

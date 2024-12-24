@@ -1,12 +1,10 @@
 package algorithm;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Padding01String {
     public static void main(String[] args) {
         StringBuilder sb = new StringBuilder();
-        ArrayList<String> list = new ArrayList<>();
         sb.append("00000");
         sb.append(",");
         char[] arr = new char[5];

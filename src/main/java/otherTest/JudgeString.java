@@ -18,7 +18,7 @@ public class JudgeString {
             System.out.println(1);
         } else if (str1.equals(str2)) {
             System.out.println(2);
-        } else if (str1.toUpperCase().equals(str2.toUpperCase())) {
+        } else if (str1.equalsIgnoreCase(str2)) {
             System.out.println(3);
         } else {
             System.out.println(4);

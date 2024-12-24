@@ -1,10 +1,7 @@
 package recursion;
 
-import java.util.Scanner;
-
 public class FactoriesAndReverse {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
 
         /*//1. 测试递归求解阶乘
         int n = sc.nextInt();

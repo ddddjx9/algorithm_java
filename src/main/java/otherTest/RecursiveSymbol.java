@@ -20,12 +20,10 @@ public class RecursiveSymbol {
     public static StringBuilder Sn(int num) {
         StringBuilder sb = new StringBuilder();
         // 先添加Sn的前置括号，然后再进行递推
-        for (int i = 0; i < num - 1; i++) {
-            sb.append("(");
-        }
+        sb.append("(".repeat(Math.max(0, num - 1)));
         for (int i = 1; i <= num; i++) {
             if (i == num) {
-                sb.append(An(i)).append("+").append(num - i + 1);
+                sb.append(An(i)).append("+").append(1);
             } else {
                 sb.append(An(i)).append("+").append(num - i + 1).append(")");
             }
@@ -43,9 +41,7 @@ public class RecursiveSymbol {
                 sb.append("+").append("sin(").append(i);
             }
             if (i == num) {
-                for (int j = 0; j < num; j++) {
-                    sb.append(")");
-                }
+                sb.append(")".repeat(num));
             }
         }
         if (num == 1) {

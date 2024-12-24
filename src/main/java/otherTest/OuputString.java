@@ -27,5 +27,4 @@ public class OuputString {
         }
         return sb.append(recursion(num - 1)).append((char) (65 + num - 1)).append(recursion(num - 1));
     }
-
 }

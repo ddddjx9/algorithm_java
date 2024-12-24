@@ -21,7 +21,6 @@ public class PrintTime {
 
         divisor = rest / 60;
         rest = rest % 60;
-        time /= 60;
 
         sBuilder.append(divisor);
         sBuilder.append(":");
@@ -30,5 +29,4 @@ public class PrintTime {
         System.out.println(sBuilder);
 
     }
-
 }

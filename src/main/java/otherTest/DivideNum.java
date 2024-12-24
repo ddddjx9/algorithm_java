@@ -32,8 +32,8 @@ public class DivideNum {
         ArrayList<Integer> factors = new ArrayList<>();
         for (int i = 2; i <= Math.sqrt(n); i++) {
             //25 / 5 = 5
-            //5 / 2 !=0
-            //24/2=12
+            //5 / 2 != 0
+            //24 / 2 = 12
             while (n % i == 0) {
                 factors.add(i);
                 n /= i;
@@ -44,5 +44,4 @@ public class DivideNum {
         }
         return factors;
     }
-
 }

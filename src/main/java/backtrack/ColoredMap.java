@@ -45,7 +45,7 @@ public class ColoredMap {
     /**
      * 设置
      *
-     * @param matrix
+     * @param matrix 给定的map
      */
     public void setMatrix(int[][] matrix) {
         this.matrix = matrix;
@@ -63,7 +63,7 @@ public class ColoredMap {
     /**
      * 设置
      *
-     * @param colorRecord
+     * @param colorRecord 给定的颜色记录
      */
     public void setColorRecord(int colorRecord) {
         this.colorRecord = colorRecord;

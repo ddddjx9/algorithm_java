@@ -22,8 +22,8 @@ public class Joseph {
         int a = sc.nextInt();
         int b = sc.nextInt();
         ArrayList<Integer> joseph = list.joseph(a, b);
-        for (int i = 0; i < joseph.size(); i++) {
-            System.out.println(joseph.get(i));
+        for (Integer integer : joseph) {
+            System.out.println(integer);
         }
     }
 }

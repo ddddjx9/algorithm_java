@@ -22,10 +22,10 @@ public class CalculateAreas {
         sc.close();
 
         //如果两个矩形没有交集，返回0
-        BigDecimal d1 = new BigDecimal(arr1[0][0]);
-        BigDecimal d2 = new BigDecimal(arr1[1][0]);
-        BigDecimal d3 = new BigDecimal(arr2[0][0]);
-        BigDecimal d4 = new BigDecimal(arr2[1][0]);
+        BigDecimal d1 = BigDecimal.valueOf(arr1[0][0]);
+        BigDecimal d2 = BigDecimal.valueOf(arr1[1][0]);
+        BigDecimal d3 = BigDecimal.valueOf(arr2[0][0]);
+        BigDecimal d4 = BigDecimal.valueOf(arr2[1][0]);
         BigDecimal max1; //求出第一组中的最大值
         BigDecimal min1; //求出第一组中的最小值
         BigDecimal min2;

@@ -23,9 +23,9 @@ public class Labyrinth {
         map[3][2] = 1;
 
         //输出地图
-        for (int i = 0; i < map.length; i++) {
-            for (int j = 0; j < map[i].length; j++) {
-                System.out.print(map[i][j] + " ");
+        for (int[] value : map) {
+            for (int i : value) {
+                System.out.print(i + " ");
             }
             System.out.println();
         }
@@ -35,9 +35,9 @@ public class Labyrinth {
         setWay2(map, 1, 1);
 
         //输出新的地图。小球走过并标识过的地图
-        for (int i = 0; i < map.length; i++) {
-            for (int j = 0; j < map[i].length; j++) {
-                System.out.print(map[i][j] + " ");
+        for (int[] ints : map) {
+            for (int anInt : ints) {
+                System.out.print(anInt + " ");
             }
             System.out.println();
         }

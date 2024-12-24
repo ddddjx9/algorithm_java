@@ -15,7 +15,7 @@ public class MaxGCD {
     }
 
     public int findGCD(int a, int b) {
-        int t = a < b ? a : b;
+        int t = Math.min(a, b);
         int gcd = 1;
         for (int i = t; i >= 1; i--) {
             if (a % i == 0 && b % i == 0) {
