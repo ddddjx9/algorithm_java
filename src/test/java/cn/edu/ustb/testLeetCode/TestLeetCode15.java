@@ -16,7 +16,7 @@ public class TestLeetCode15 {
         ArrayList<List<Integer>> resultList = new ArrayList<>();
         resultList.add(Arrays.asList(-1, 0, 1));
 
-        assertTrue(JudgeNestedArray.compareListOfListsWithStream(resultList,threeSum(nums)));
+        assertTrue(JudgeNestedArray.compareListOfListsWithStream(resultList, threeSum(nums)));
     }
 
     /**
